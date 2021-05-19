@@ -14,7 +14,7 @@ class Note(models.Model):
     ]
     title = models.CharField(max_length=255, verbose_name="Название")
     description = models.TextField(verbose_name="Описание")
-    status = models.CharField(choices=STATUS_NOTE_CHOICES, default=CREATED, max_length=11, verbose_name="Статус")
+    status = models.CharField(choices=STATUS_NOTE_CHOICES, default=STATUS_NOTE_CHOICES[0][0], max_length=11, verbose_name="Статус")
     author = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name="Пользователь")
 
     class Meta:
